@@ -16,9 +16,9 @@ class Tasks extends Task{
         {
             foreach($player->getWorld()->getEntities() as $entity)
             {
-                if($entity instanceof \pocketmine\entity\projectile\Arrow && $entity->getOwningEntity() == $player)
+                if($entity instanceof \pocketmine\entity\projectile\Arrow && $entity->getOwningEntity() == $player && $entity->getGravity() == 0.01)
                 {
-                    $entity->setMotion($player->getDirectionVector()->multiply(3));
+                    $entity->setMotion($player->getDirectionVector()->multiply(2));
                 }
             }
         }
