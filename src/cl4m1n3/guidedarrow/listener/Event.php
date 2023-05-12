@@ -6,6 +6,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerItemUseEvent;
 use pocketmine\entity\Location;
 use pocketmine\entity\projectile\Arrow;
+use pocketmine\item\ItemFactory;
 
 class Event implements Listener
 {
@@ -26,7 +27,7 @@ class Event implements Listener
                 $arrow->spawnToAll();
                 
                 // Removing arrow (guided arrow) from Inventory
-                $player->getInventory()->removeItem($item);
+                $player->getInventory()->removeItem(ItemFactory::getInstance()->get($item->getId(), 0, 1));
             }
         }
     }
