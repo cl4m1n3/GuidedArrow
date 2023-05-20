@@ -8,7 +8,8 @@ The plugin allows you to launch an arrow and control it during flight using the 
 ## Arrow Features
 - The arrow will fly until it hits an obstacle
 - The flight speed and damage of the arrow are equal to the flight speed and damage of the arrow from the bow
-
+<br>
+To deactivate the modification, enter the command again
 # Commands and Permissions
 /guidedarrow - Activate the modification
 <br>
