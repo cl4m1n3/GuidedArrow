@@ -3,6 +3,8 @@
 namespace cl4m1n3\guidedarrow;
 
 use pocketmine\scheduler\Task;
+use pocketmine\entity\projectile\Arrow;
+use cl4m1n3\guidedarrow\GuidedArrow;
 
 class Tasks extends Task{
     
@@ -16,7 +18,7 @@ class Tasks extends Task{
         {
             foreach($player->getWorld()->getEntities() as $entity)
             {
-                if($entity instanceof \pocketmine\entity\projectile\Arrow && $entity->getOwningEntity() == $player && $entity->getGravity() == 0.01)
+                if($entity instanceof Arrow && $entity->getOwningEntity() == $player && GuidedArrow::getStatus($player))
                 {
                     $entity->setMotion($player->getDirectionVector()->multiply(2));
                 }
