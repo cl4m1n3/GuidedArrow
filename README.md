@@ -1,7 +1,7 @@
 # GuidedArrow
 Plugin for PocketMine-MP 4.X.X
 
-# Description
+## Description
 The plugin allows you to launch an arrow and control it during flight using the direction of the player's gaze
 
 ## Using
