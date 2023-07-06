@@ -13,7 +13,7 @@ class GuidedArrowCommand extends Command
     public function __construct()
     {
         $this->setPermission("use.guidedarrow");
-        parent::__construct("guidedarrow", "guided arrow", "use /guidedarrow");
+        parent::__construct("guidedarrow", "guided arrow", "use /guidedarrow", ["garrow"]);
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
