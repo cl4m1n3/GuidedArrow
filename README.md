@@ -5,7 +5,7 @@ Plugin for PocketMine-MP 4.X.X
 The plugin allows you to launch an arrow and control it during flight using the direction of the player's gaze
 
 ## Using
-- Activate the modification using the /guidedarrow command
+- Activate the modification using the /guidedarrow or /garrow command
 - Shoot the bow and control the arrow using the direction of view
 - To deactivate the modification, enter the command again
 
