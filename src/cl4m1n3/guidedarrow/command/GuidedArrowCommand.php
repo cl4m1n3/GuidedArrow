@@ -12,22 +12,22 @@ class GuidedArrowCommand extends Command
 {
     public function __construct()
     {
+        $this->setPermission("use.guidedarrow");
         parent::__construct("guidedarrow", "guided arrow", "use /guidedarrow");
     }
+
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
-        if($sender instanceof Player)
-        {
-            if($sender->hasPermission("use.guidedarrow"))
-            {
-                if(GuidedArrow::getStatus($sender)) // If the status is true
-                {
-                    GuidedArrow::setStatus($sender, false);
-                    $sender->sendMessage(TextFormat::WHITE . "The guided arrow has been successfully " . TextFormat::RED . "deactivated" . TextFormat::WHITE . "!");
-                    return;
-                }
-                GuidedArrow::setStatus($sender, true);
-                $sender->sendMessage(TextFormat::WHITE . "The guided arrow has been successfully " . TextFormat::GREEN . "activated" . TextFormat::WHITE . "!");
+        if ($sender instanceof Player) {
+            if ($sender->hasPermission("use.guidedarrow")) {
+
+                GuidedArrow::getInstance()->updateStatus($sender);
+                
+                $sender->sendMessage(
+                    TextFormat::WHITE . "The automatic arrow has been successfully " .
+                    [true => TextFormat::GREEN . "activated", false => TextFormat::RED . "deactivated"][GuidedArrow::getInstance()->getStatus($sender)] .
+                    TextFormat::WHITE . "!"
+                );
                 return;
             }
             $sender->sendMessage(TextFormat::RED . "§cYou do not have permission to use this command!");

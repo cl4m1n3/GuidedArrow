@@ -2,10 +2,10 @@
 name: GuidedArrow
 main: cl4m1n3\guidedarrow\GuidedArrow
 api:
-- 4.0.0
-version: 1.0.0
+- 5.0.0
+version: 1.1.0
 php:
-- 8
+- 8.1
 author: cl4m1n3
 
 permissions:
