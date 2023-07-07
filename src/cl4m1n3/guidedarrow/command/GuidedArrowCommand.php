@@ -24,7 +24,7 @@ class GuidedArrowCommand extends Command
                 GuidedArrow::getInstance()->updateStatus($sender);
                 
                 $sender->sendMessage(
-                    TextFormat::WHITE . "The automatic arrow has been successfully " .
+                    TextFormat::WHITE . "The guided arrow has been successfully " .
                     [true => TextFormat::GREEN . "activated", false => TextFormat::RED . "deactivated"][GuidedArrow::getInstance()->getStatus($sender)] .
                     TextFormat::WHITE . "!"
                 );
